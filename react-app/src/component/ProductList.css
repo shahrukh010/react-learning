@@ -1,0 +1,118 @@
+/* .product-list {
+    max-width: 800px;
+    margin: 0 auto;
+  } */
+  .product-list {
+    max-width: 100%;
+    margin: 0;
+    padding: 1rem;
+  }
+  
+  /* .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 1rem;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  } */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1rem;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .product-grid > li:nth-child(5n + 1) {
+    clear: both;
+  }
+  
+  .product-grid > li {
+    padding-bottom: 1rem;
+  }
+
+  
+  /* .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 1rem;
+    list-style-type: none;
+    padding: 0;
+  }
+   */
+  /* .product-item {
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    /* padding: 1rem; */
+   
+  
+  /* .product-image {
+    width: 100%;
+    margin-bottom: 1rem;
+  } */
+  .product-img {
+    max-width: 100%;
+    height: 250px;
+    object-fit: contain;
+    position: relative;
+  }
+
+  
+  .product-image img {
+    width: 100%;
+    height: 250px;
+  }
+  
+  .product-details h2 {
+    margin-top: 0;
+  }
+  
+  .product-details p {
+    margin: 0;
+  }
+  
+  .product-details button {
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+  
+  .product-details button:hover {
+    background-color: #0077B5;
+  }
+  
+  .product-quantity {
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+  }
+
+  .product-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  
+  .product-title {
+    font-size: 1.2rem;
+    margin: 0;
+    line-height: 1.4;
+    height: 3.6rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .product-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .add-to-cart {
+    margin-top: auto;
+    align-self: flex-end;
+  }
