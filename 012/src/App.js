@@ -1,29 +1,36 @@
-import { useState } from 'react';
+import { useState } from "react";
+import React from "react";
 import './App.css';
-
 function App() {
-  const [tasks, setTasks] = useState([
-    {id: 5271, name: "Record React Lectures", completed: true}, 
-    {id: 7825, name: "Edit React Lectures", completed: false}, 
-    {id: 8391, name: "Watch Lectures", completed: false}
+  
+  const [courses,setCourse] = useState([
+      {id:54321,name:'Learning Python for Data Analysis and Visualization Ver 1',price:499},
+      {id:65124,name:'UML and Object-Oriented Design Foundations',price:499},
+      {id:80761,name:'The Complete JavaScript Course 2023: From Zero to Expert!',price:499}
   ]);
 
+  const[show,setShow] = useState(true)
+
+
   function handleDelete(id){
-    setTasks(tasks.filter(task=> id !==task.id))
+
+      setCourse(courses.filter((course)=>course.id !==id));
   }
-  return (
-    <div className="App">
-      <h1>Task List</h1>
-      <ul>
-        { tasks.map((task) => (
-          <li key={task.id}>
-            <span>{task.id} - {task.name}</span>
-            <button onClick={()=>handleDelete(task.id)} className="delete">Delete</button>
+return (
+  <div className="App">
+    <h1>Course List</h1>
+    <ul>
+      <button onClick={()=>setShow(!show)}className='trigger'>Toggle</button>
+      {show && courses.map((course)=>(
+          
+          <li key = {course.id}>
+              <span>{course.id} - {course.name} - {course.price}</span>
+              <button onClick={()=>handleDelete(course.id)} className='delete'>Delete</button>
           </li>
-        )) }
-      </ul>
-    </div>
-  );
+      ))}
+    </ul>
+  </div>
+);
 }
 
 export default App;
